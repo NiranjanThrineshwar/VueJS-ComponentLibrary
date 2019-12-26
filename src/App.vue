@@ -3,25 +3,26 @@
     <img alt="Vue logo" src="./assets/logo.png" />
     <div>{{ count }}</div>
     <div>{{ doneTodosCount }}</div>
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <button @click="actionA">+</button>
+    <button @click="actionB">-</button>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-import { mapState, mapGetters } from "vuex";
+import { mapState, mapGetters, mapMutations, mapActions } from "vuex";
 
 export default {
   name: "app",
-  components: {
-    HelloWorld
-  },
   computed: {
     ...mapState(["count"]),
     ...mapGetters(["doneTodos", "doneTodosCount", "getTodoById"]),
     doneTodosCount() {
       return this.$store.getters.doneTodosCount;
     }
+  },
+  methods: {
+    ...mapMutations(["increment", "decrement"]),
+    ...mapActions(["actionA", "actionB"])
   }
 };
 </script>

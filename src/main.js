@@ -17,6 +17,32 @@ const store = new Vuex.Store({
   mutations: {
     increment(state) {
       state.count++;
+    },
+    decrement(state) {
+      state.count--;
+    },
+    incrementBy(state, n) {
+      state.count += n.amount;
+    }
+  },
+  actions: {
+    incrementAsync({ commit }) {
+      setTimeout(() => {
+        commit("increment");
+      }, 1000);
+    },
+    actionA({ commit }) {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          commit("increment");
+          resolve();
+        }, 1000);
+      });
+    },
+    actionB({ dispatch, commit }) {
+      return dispatch("incrementAsync").then(() => {
+        commit("decrement");
+      });
     }
   },
   getters: {
@@ -29,6 +55,11 @@ const store = new Vuex.Store({
     getTodoById: state => id => {
       return state.todos.find(todo => todo.id === id);
     }
+  },
+  methods: {
+    getData(state) {
+      state.count;
+    }
   }
 });
 
@@ -39,6 +70,10 @@ console.log(store.state.count);
 console.log(store.getters.doneTodosCount);
 // eslint-disable-next-line no-console
 console.log(store.getters.getTodoById(2));
+// eslint-disable-next-line no-console
+console.log(store.commit("increment"));
+// eslint-disable-next-line no-console
+console.log(store.commit("incrementBy", { amount: 20 }));
 
 new Vue({
   store,
