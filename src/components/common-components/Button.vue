@@ -26,6 +26,7 @@
   <div
     v-else-if="isLink"
     :class="['button button--link', disabled ? 'button--' + disabled : '']"
+    @click="handleButtonClick"
   >
     <span>{{ buttonText }}</span>
   </div>

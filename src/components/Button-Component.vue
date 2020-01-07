@@ -5,17 +5,17 @@
       <Button
         buttonType="primary"
         buttonText="Primary Button"
-        @handleButtonClick="handleClickInParent"
+        @handleButtonClick="handleButtonClick"
       ></Button>
       <Button
         buttonType="secondary"
         buttonText="Secondary Button"
-        @handleButtonClick="handleClickInParent"
+        @handleButtonClick="handleButtonClick"
       ></Button>
       <Button
         buttonType="tertiary"
         buttonText="Danger Button"
-        @handleButtonClick="handleClickInParent"
+        @handleButtonClick="handleButtonClick"
       ></Button>
     </div>
 
@@ -27,7 +27,7 @@
         icon="true"
         iconType="right"
         iconClass="fa-coffee"
-        @handleButtonClick="handleClickInParent"
+        @handleButtonClick="handleButtonClick"
       ></Button>
       <Button
         buttonType="secondary"
@@ -35,7 +35,7 @@
         icon="true"
         iconType="left"
         iconClass="fa-spinner"
-        @handleButtonClick="handleClickInParent"
+        @handleButtonClick="handleButtonClick"
       ></Button>
       <Button
         buttonType="tertiary"
@@ -43,7 +43,7 @@
         icon="true"
         iconType="right"
         iconClass="fa-arrow-circle-right"
-        @handleButtonClick="handleClickInParent"
+        @handleButtonClick="handleButtonClick"
       ></Button>
     </div>
 
@@ -56,7 +56,7 @@
         iconType="right"
         disabled="disabled"
         iconClass="fa-coffee"
-        @handleButtonClick="handleClickInParent"
+        @handleButtonClick="handleButtonClick"
       ></Button>
       <Button
         buttonType="secondary"
@@ -65,7 +65,7 @@
         iconType="right"
         disabled="disabled"
         iconClass="fa-spinner"
-        @handleButtonClick="handleClickInParent"
+        @handleButtonClick="handleButtonClick"
       ></Button>
       <Button
         buttonType="tertiary"
@@ -74,7 +74,7 @@
         iconType="left"
         disabled="disabled"
         iconClass="fa-arrow-circle-right"
-        @handleButtonClick="handleClickInParent"
+        @handleButtonClick="handleButtonClick"
       ></Button>
     </div>
 
@@ -84,7 +84,7 @@
         buttonType="primary"
         buttonText="Primary Button small size"
         buttonSize="small"
-        @handleButtonClick="handleClickInParent"
+        @handleButtonClick="handleButtonClick"
       ></Button>
       <Button
         buttonType="secondary"
@@ -92,14 +92,14 @@
         buttonSize="small"
         icon="true"
         iconClass="fa-spinner"
-        @handleButtonClick="handleClickInParent"
+        @handleButtonClick="handleButtonClick"
       ></Button>
       <Button
         buttonType="tertiary"
         buttonText="Danger Button small size"
         buttonSize="small"
         disabled="disabled"
-        @handleButtonClick="handleClickInParent"
+        @handleButtonClick="handleButtonClick"
       ></Button>
     </div>
 
@@ -108,13 +108,13 @@
       <Button
         isLink="true"
         buttonText="Primary button link"
-        @handleButtonClick="handleClickInParent"
+        @handleButtonClick="handleButtonClick"
       ></Button>
       <Button
         isLink="true"
         disabled="disabled"
         buttonText="Primary button link disabled"
-        @handleButtonClick="handleClickInParent"
+        @handleButtonClick="handleButtonClick"
       ></Button>
     </div>
   </div>
@@ -129,7 +129,7 @@ export default {
     Button
   },
   methods: {
-    handleClickInParent: function(event) {
+    handleButtonClick: function(event) {
       // eslint-disable-next-line no-console
       console.log(event + " Button Clicked");
     }

@@ -16,9 +16,10 @@
         'input form-input__field',
         disabled ? 'button--' + disabled : ''
       ]"
-      v-model="inputData"
-      @blur="handleKeyUp"
+      v-model="enteredData"
+      @blur="handleInputBlur"
       @focus="handleInputFocus"
+      @keyup="handleKeyUp"
     />
     <span v-if="label && iconType === 'right'">{{ label }}</span>
     <i
@@ -33,7 +34,8 @@ export default {
   name: "Input",
   data() {
     return {
-      focused: false
+      focused: false,
+      enteredData: this.inputData
     };
   },
   props: {
@@ -50,11 +52,18 @@ export default {
   methods: {
     handleKeyUp() {
       // eslint-disable-next-line no-console
-      console.log(`Input Data ${this.inputData}`);
+      console.log(`Input Data ${this.enteredData}`);
       this.focused = false;
+      this.$emit("onInputKeyUp", this.enteredData);
     },
     handleInputFocus() {
       this.focused = true;
+    },
+    handleInputBlur() {
+      // eslint-disable-next-line no-console
+      console.log(`Input Data ${this.enteredData}`);
+      this.focused = false;
+      this.$emit("onInputBlur", this.enteredData);
     }
   }
 };
