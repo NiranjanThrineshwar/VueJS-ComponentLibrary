@@ -13,6 +13,10 @@
     <!-- Input component -->
     <h2>Input text Component</h2>
     <InputComponent></InputComponent>
+
+    <!-- Auto-Complete component -->
+    <h2>Auto-complete Component</h2>
+    <AutocompleteComponent></AutocompleteComponent>
   </div>
 </template>
 
@@ -20,12 +24,14 @@
 import { mapState, mapGetters, mapMutations, mapActions } from "vuex";
 import ButtonComponent from "./components/Button-Component";
 import InputComponent from "./components/Input-Component";
+import AutocompleteComponent from "./components/Autocomplete-Component";
 
 export default {
   name: "app",
   components: {
     ButtonComponent,
-    InputComponent
+    InputComponent,
+    AutocompleteComponent
   },
   computed: {
     ...mapState(["count"]),

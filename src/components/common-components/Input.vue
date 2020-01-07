@@ -49,19 +49,20 @@ export default {
     label: String,
     isError: String
   },
+  watch: {
+    inputData: function(newVal) {
+      this.enteredData = newVal;
+    }
+  },
   methods: {
     handleKeyUp() {
-      // eslint-disable-next-line no-console
-      console.log(`Input Data ${this.enteredData}`);
-      this.focused = false;
       this.$emit("onInputKeyUp", this.enteredData);
     },
     handleInputFocus() {
       this.focused = true;
+      this.$emit("onInputFocus");
     },
     handleInputBlur() {
-      // eslint-disable-next-line no-console
-      console.log(`Input Data ${this.enteredData}`);
       this.focused = false;
       this.$emit("onInputBlur", this.enteredData);
     }
@@ -162,7 +163,7 @@ export default {
 }
 
 .input--vanity.in-focus {
-  border-bottom: 3px solid rgba(211, 20, 20, 1);
+  border-bottom: 3px solid black;
 }
 
 .input--box.input--error.in-focus {

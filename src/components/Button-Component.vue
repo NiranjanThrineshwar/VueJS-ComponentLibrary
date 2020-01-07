@@ -6,6 +6,7 @@
         buttonType="primary"
         buttonText="Primary Button"
         @handleButtonClick="handleButtonClick"
+        isClicked="true"
       ></Button>
       <Button
         buttonType="secondary"

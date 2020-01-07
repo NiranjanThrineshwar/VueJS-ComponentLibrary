@@ -6,7 +6,7 @@
       buttonType ? 'button--' + buttonType : '',
       buttonSize ? 'button--' + buttonSize : '',
       disabled ? 'button--' + disabled : '',
-      clicked ? 'button-clicked' : 'not-clicked'
+      clicked === true ? 'button-clicked' : 'not-clicked'
     ]"
     @click="handleButtonClick"
     v-click-outside="onButtonBlur"
@@ -39,7 +39,7 @@ export default {
   name: "button",
   data() {
     return {
-      clicked: false
+      clicked: this.isClicked === "true" ? true : false
     };
   },
   props: {
@@ -50,7 +50,8 @@ export default {
     iconType: String,
     iconClass: String,
     disabled: String,
-    isLink: String
+    isLink: String,
+    isClicked: String
   },
   methods: {
     handleButtonClick: function() {
