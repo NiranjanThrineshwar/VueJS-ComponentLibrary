@@ -5,7 +5,7 @@ This library is a simple implementation of different common components which can
 
 ## Project setup
 ```
-git clone "https://github.com/NiranjanThrineshwar/Vuex-Example.git"
+git clone "https://github.com/NiranjanThrineshwar/VueJS-ComponentLibrary.git"
 
 npm install
 ```
