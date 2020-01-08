@@ -14,7 +14,7 @@
           'Pineapple'
         ]"
         type="text"
-        placeholder="Left icon with text..."
+        placeholder="Type in to see the list"
         inputStyle="box"
         icon="fa-search"
         iconType="left"
@@ -33,7 +33,7 @@
           'Pineapple'
         ]"
         type="text"
-        placeholder="Left icon with text..."
+        placeholder="Type in to see the list"
         inputStyle="vanity"
         icon="fa-search"
         iconType="left"
@@ -63,7 +63,7 @@ export default {
 <style lang="scss">
 .autocomplete-wrapper {
   display: flex;
-  padding-top: 2%;
+  padding-top: 1%;
   margin: 0 auto;
   width: 70%;
 }

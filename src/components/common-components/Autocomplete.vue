@@ -10,12 +10,12 @@
       @onInputKeyUp="onChange"
       :inputData="search"
     />
-    <ul v-show="isOpen" class="autocomplete-results">
+    <ul v-show="isOpen" class="autocomplete--results">
       <li
         v-for="(result, i) in results"
         :key="i"
         @click="setResult(result)"
-        class="autocomplete-result"
+        class="autocomplete--results--list"
       >
         {{ result }}
       </li>
@@ -73,17 +73,18 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../../styles/base.scss";
+
 .autocomplete-component {
   width: 100%;
   display: block;
   transition: all 0.5s ease-in-out;
-  height: 42px;
   margin: 4px;
 
-  .autocomplete-results {
+  .autocomplete--results {
     padding: 0;
     margin: 0;
-    border: 1px solid rgba(0, 0, 0, 1);
+    border: 1px solid $color--black;
     border-top: none;
     border-radius: 4px;
     height: 120px;
@@ -93,16 +94,16 @@ export default {
     width: 100%;
   }
 
-  .autocomplete-result {
+  .autocomplete--results--list {
     list-style: none;
     text-align: left;
     padding: 4px 2px;
     cursor: pointer;
   }
 
-  .autocomplete-result:hover {
-    background-color: rgba(0, 35, 61, 0.3);
-    color: white;
+  .autocomplete--results--list:hover {
+    background-color: $color--list;
+    color: $color--white;
   }
 }
 </style>

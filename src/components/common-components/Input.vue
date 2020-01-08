@@ -71,6 +71,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../../styles/base.scss";
+
 .form-input {
   width: 100%;
   display: flex;
@@ -80,18 +82,18 @@ export default {
 }
 
 .input--box.input--error {
-  border: 1px solid rgba(211, 20, 20, 0.5);
+  border: 1px solid $color--error--light;
 
   &:hover {
-    border: 1px solid rgba(211, 20, 20, 1);
+    border: 1px solid $color--error;
   }
 }
 
 .input--box.input--valid {
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  border: 1px solid $color--black--light;
 
   &:hover {
-    border: 1px solid rgba(0, 0, 0, 1);
+    border: 1px solid $color--black;
   }
 }
 
@@ -118,27 +120,27 @@ export default {
 
 .input--box.input--valid.in-focus {
   padding: 0px;
-  border: 3px solid black;
+  border: 3px solid $color--black;
 }
 
 .input--box.input--error.in-focus {
   padding: 0px;
-  border: 3px solid rgba(211, 20, 20, 1);
+  border: 3px solid $color--error;
 }
 
 .input--vanity.input--error {
-  border-bottom: 1px solid rgba(211, 20, 20, 0.5);
+  border-bottom: 1px solid $color--error--light;
 
   &:hover {
-    border-bottom: 3px solid rgba(211, 20, 20, 1);
+    border-bottom: 3px solid $color--error;
   }
 }
 
 .input--vanity.input--valid {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid $color--black--light;
 
   &:hover {
-    border-bottom: 3px solid rgba(0, 0, 0, 1);
+    border-bottom: 3px solid $color--black;
   }
 }
 
@@ -163,11 +165,11 @@ export default {
 }
 
 .input--vanity.in-focus {
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid $color--black;
 }
 
 .input--box.input--error.in-focus {
   padding: 0px;
-  border: 3px solid rgba(211, 20, 20, 1);
+  border: 3px solid $color--error;
 }
 </style>

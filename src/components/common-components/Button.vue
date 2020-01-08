@@ -72,15 +72,16 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../../styles/base.scss";
+
 .button {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: all 0.5s ease-in-out;
-  border: 2px solid rgba(0, 0, 0, 0);
   border-radius: 2px;
-  border: 3px solid #00233d;
+  border: 3px solid $color--primary;
   cursor: pointer;
 
   .button--primary-text,
@@ -101,26 +102,26 @@ export default {
   }
 
   .button--primary-text {
-    background: #00233d;
+    background: $color--primary;
   }
   .button--secondary-text {
-    background: #42b0d5;
+    background: $color--secondary;
   }
 
   .button--tertiary-text {
-    background: #b80012;
+    background: $color--danger;
   }
 
   &:hover {
     .button--primary-text {
-      background: rgba(0, 35, 61, 0.8);
+      background: $color--primary--disabled;
     }
     .button--secondary-text {
-      background: rgba(66, 176, 213, 0.8);
+      background: $color--secondary--disabled;
     }
 
     .button--tertiary-text {
-      background: rgba(184, 0, 18, 0.8);
+      background: $color--danger--disabled;
     }
   }
 }
@@ -133,32 +134,32 @@ export default {
 }
 
 .button--primary {
-  color: white;
-  border: 3px solid #00233d;
+  color: $color--white;
+  border: 3px solid $color--primary;
 }
 
 .button--secondary {
-  color: white;
-  border: 3px solid #42b0d5;
+  color: $color--white;
+  border: 3px solid $color--secondary;
 }
 
 .button--tertiary {
-  color: white;
-  border: 3px solid #b80012;
+  color: $color--white;
+  border: 3px solid $color--danger;
 }
 
 .button--disabled {
   cursor: not-allowed;
   opacity: 0.5;
   .button--primary-text {
-    background: rgba(0, 35, 61, 0.8);
+    background: $color--primary--disabled;
   }
   .button--secondary-text {
-    background: rgba(66, 176, 213, 0.8);
+    background: $color--secondary--disabled;
   }
 
   .button--tertiary-text {
-    background: rgba(184, 0, 18, 0.8);
+    background: $color--danger--disabled;
   }
 }
 
@@ -186,17 +187,15 @@ export default {
   align-items: center;
   transition: all 0.5s ease-in-out;
   border: none;
-  border-radius: 0px;
-  border: none;
   cursor: pointer;
 
   span {
-    color: #42b0d5;
-    border-bottom: 1px solid #42b0d5;
+    color: $color--secondary;
+    border-bottom: 1px solid $color--secondary;
 
     &:hover {
-      color: rgba(0, 35, 61, 0.8);
-      border-bottom: 1px solid rgba(0, 35, 61, 0.8);
+      color: $color--primary--disabled;
+      border-bottom: 1px solid $color--primary--disabled;
     }
   }
 }
@@ -205,8 +204,8 @@ export default {
   cursor: not-allowed;
   opacity: 0.5;
   span {
-    color: #706c6ce1;
-    border-bottom: 1px solid #706c6ce1;
+    color: $color--disabled;
+    border-bottom: 1px solid $color--disabled;
   }
 }
 </style>
