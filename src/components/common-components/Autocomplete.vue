@@ -67,6 +67,7 @@ export default {
     setResult(result) {
       this.search = result;
       this.isOpen = false;
+      this.$emit("onSelect", result);
     }
   }
 };
@@ -79,7 +80,7 @@ export default {
   width: 100%;
   display: block;
   transition: all 0.5s ease-in-out;
-  margin: 4px;
+  margin: 4px 13px 4px 4px;
 
   .autocomplete--results {
     padding: 0;

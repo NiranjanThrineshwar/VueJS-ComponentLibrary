@@ -7,6 +7,8 @@
         placeholder="Text..."
         inputStyle="box"
         isError="false"
+        @onInputKeyUp="onInputKeyUp"
+        @onInputBlur="onInputBlur"
       />
       <Input
         type="text"
@@ -14,6 +16,8 @@
         inputStyle="vanity"
         inputData="Default text"
         isError="false"
+        @onInputKeyUp="onInputKeyUp"
+        @onInputBlur="onInputBlur"
       />
     </div>
 
@@ -117,6 +121,16 @@ export default {
   name: "input-component",
   components: {
     Input
+  },
+  methods: {
+    onInputKeyUp(value) {
+      // eslint-disable-next-line no-console
+      console.log(value + " on key up value");
+    },
+    onInputBlur(value) {
+      // eslint-disable-next-line no-console
+      console.log(value + " on blur of input component");
+    }
   }
 };
 </script>

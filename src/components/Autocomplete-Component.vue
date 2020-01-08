@@ -2,42 +2,24 @@
   <div class="autocomplete-component">
     <div class="autocomplete-wrapper">
       <Autocomplete
-        :items="[
-          'Apple',
-          'Banana',
-          'Orange',
-          'Mango',
-          'Pear',
-          'Peach',
-          'Grape',
-          'Tangerine',
-          'Pineapple'
-        ]"
+        :items="itemList"
         type="text"
         placeholder="Type in to see the list"
         inputStyle="box"
         icon="fa-search"
         iconType="left"
         isError="false"
+        @onSelect="getSelectedValue"
       ></Autocomplete>
       <Autocomplete
-        :items="[
-          'Apple',
-          'Banana',
-          'Orange',
-          'Mango',
-          'Pear',
-          'Peach',
-          'Grape',
-          'Tangerine',
-          'Pineapple'
-        ]"
+        :items="itemList"
         type="text"
         placeholder="Type in to see the list"
         inputStyle="vanity"
         icon="fa-search"
         iconType="left"
-        isError="false"
+        isError="true"
+        @onSelect="getSelectedValue"
       ></Autocomplete>
     </div>
   </div>
@@ -48,13 +30,28 @@ import Autocomplete from "./common-components/Autocomplete";
 
 export default {
   name: "autocomplete-component",
+  data() {
+    return {
+      itemList: [
+        "Apple",
+        "Banana",
+        "Orange",
+        "Mango",
+        "Pear",
+        "Peach",
+        "Grape",
+        "Tangerine",
+        "Pineapple"
+      ]
+    };
+  },
   components: {
     Autocomplete
   },
   methods: {
-    handleButtonClick: function(event) {
+    getSelectedValue: function(value) {
       // eslint-disable-next-line no-console
-      console.log(event + " Button Clicked");
+      console.log(value + " selected dropdown value");
     }
   }
 };
