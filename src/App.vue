@@ -20,6 +20,12 @@
     <!-- Checkbox component -->
     <h2>Checkbox Component</h2>
     <CheckboxComponent></CheckboxComponent>
+    <br />
+
+    <!-- Radio component -->
+    <h2>Radio Component</h2>
+    <RadioComponent></RadioComponent>
+    <br />
   </div>
 </template>
 
@@ -29,6 +35,7 @@ import ButtonComponent from "./components/Button-Component";
 import InputComponent from "./components/Input-Component";
 import AutocompleteComponent from "./components/Autocomplete-Component";
 import CheckboxComponent from "./components/Checkbox-Component";
+import RadioComponent from "./components/Radio-Component";
 
 export default {
   name: "app",
@@ -36,7 +43,8 @@ export default {
     ButtonComponent,
     InputComponent,
     AutocompleteComponent,
-    CheckboxComponent
+    CheckboxComponent,
+    RadioComponent
   },
   computed: {
     ...mapState(["count"]),

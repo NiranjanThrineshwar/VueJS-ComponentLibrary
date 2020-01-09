@@ -1,27 +1,23 @@
 <template>
-  <div class="form-checkbox">
+  <div class="form-radio">
     <div
-      :class="['form-checkbox--container', item.additionalClasses]"
-      v-for="(item, index) in checkboxData"
+      :class="['form-radio--container', item.additionalClasses]"
+      v-for="(item, index) in radioData"
       :key="index"
     >
-      <label
-        class="form-checkbox__label--container"
-        :disabled="item.isdisbaled"
-      >
+      <label class="form-radio__label--container" :disabled="item.isdisbaled">
         {{ item.primaryLabel }}
         <input
-          type="checkbox"
+          type="radio"
           :checked="item.isChecked"
           :disabled="item.isdisbaled"
-          name="checkbox"
-          v-model="item.isChecked"
-          @click="handleCheckBoxClick(item, $event)"
+          name="radio"
+          @click="handleRadioClick(item, $event)"
         />
-        <span class="form-checkbox__checkmark"></span>
+        <span class="form-radio__checkmark"></span>
         <label
           v-if="item.secondaryLabel"
-          class="form-checkbox__label--secondary"
+          class="form-radio__label--secondary"
           v-html="item.secondaryLabel"
         >
         </label>
@@ -32,14 +28,14 @@
 
 <script>
 export default {
-  name: "Checkbox",
+  name: "radio",
   props: {
-    checkboxData: Array[Object]
+    radioData: Array[Object]
   },
   methods: {
-    handleCheckBoxClick(item, event) {
+    handleRadioClick(item, event) {
       item = { ...item, isChecked: event.target.checked };
-      this.$emit("onCheckboxSelect", item);
+      this.$emit("onRadioSelect", item);
     }
   }
 };
@@ -48,7 +44,7 @@ export default {
 <style lang="scss">
 @import "../../styles/base.scss";
 
-.form-checkbox__label--container {
+.form-radio__label--container {
   display: block;
   position: relative;
   padding-left: 35px;
@@ -59,7 +55,7 @@ export default {
   user-select: none;
   text-align: left;
 
-  .form-checkbox__label--secondary {
+  .form-radio__label--secondary {
     display: flex;
     font-size: $small;
     padding-top: 2px;
@@ -76,39 +72,37 @@ export default {
   }
 }
 
-/* Hide the browser's default checkbox */
-.form-checkbox__label--container {
+/* Hide the browser's default radio */
+.form-radio__label--container {
   input {
     position: absolute;
     opacity: 0;
-    height: 0;
-    width: 0;
+    cursor: pointer;
   }
 }
 
-/* Create a custom checkbox */
-.form-checkbox__checkmark {
+/* Create a custom radio */
+.form-radio__checkmark {
   position: absolute;
   top: 0;
   left: 0;
   height: 20px;
   width: 20px;
-  border-radius: 3px;
   border: 1px solid $color--grey-light;
   background-color: $color--white;
-  cursor: pointer;
+  border-radius: 50%;
 }
 
 /* On mouse-over, add a grey background color */
-.form-checkbox__label--container {
-  input ~ .form-checkbox__checkmark {
+.form-radio__label--container {
+  input ~ .form-radio__checkmark {
     &:hover {
       border: 1px solid $color--grey;
     }
   }
-  /* When the checkbox is checked, add a blue background */
+  /* When the radio is checked, add a blue background */
   input {
-    &:checked ~ .form-checkbox__checkmark {
+    &:checked ~ .form-radio__checkmark {
       background-color: $color--secondary-border;
 
       &:hover {
@@ -116,16 +110,23 @@ export default {
       }
     }
 
-    &:disabled ~ .form-checkbox__checkmark {
+    &:disabled ~ .form-radio__checkmark {
       cursor: not-allowed;
       background-color: $color--grey-secondary;
       border-color: $color--disabled-light;
     }
   }
 
+  /* Create the indicator (the dot/circle - hidden when not checked) */
+  .form-radio__checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
   /* Show the checkmark when checked */
   input {
-    &:checked ~ .form-checkbox__checkmark {
+    &:checked ~ .form-radio__checkmark {
       &::after {
         display: block;
       }
@@ -134,20 +135,14 @@ export default {
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
-.form-checkbox__checkmark {
+.form-radio__checkmark {
   &::after {
-    content: "";
-    position: absolute;
-    display: none;
-    left: 7px;
-    top: 1px;
-    width: 5px;
-    height: 11px;
-    border: solid $color--white;
-    border-width: 0 2px 2px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
+    top: 6px;
+    left: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: $color--white;
   }
 }
 </style>
