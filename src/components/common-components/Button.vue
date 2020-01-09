@@ -114,14 +114,14 @@ export default {
 
   &:hover {
     .button--primary-text {
-      background: $color--primary--disabled;
+      background: $color--primary-disabled;
     }
     .button--secondary-text {
-      background: $color--secondary--disabled;
+      background: $color--secondary-disabled;
     }
 
     .button--tertiary-text {
-      background: $color--danger--disabled;
+      background: $color--danger-disabled;
     }
   }
 }
@@ -152,14 +152,14 @@ export default {
   cursor: not-allowed;
   opacity: 0.5;
   .button--primary-text {
-    background: $color--primary--disabled;
+    background: $color--primary-disabled;
   }
   .button--secondary-text {
-    background: $color--secondary--disabled;
+    background: $color--secondary-disabled;
   }
 
   .button--tertiary-text {
-    background: $color--danger--disabled;
+    background: $color--danger-disabled;
   }
 }
 
@@ -194,8 +194,8 @@ export default {
     border-bottom: 1px solid $color--secondary;
 
     &:hover {
-      color: $color--primary--disabled;
-      border-bottom: 1px solid $color--primary--disabled;
+      color: $color--primary-disabled;
+      border-bottom: 1px solid $color--primary-disabled;
     }
   }
 }

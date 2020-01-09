@@ -16,6 +16,10 @@
     <h2>Auto-complete Component</h2>
     <AutocompleteComponent></AutocompleteComponent>
     <br />
+
+    <!-- Checkbox component -->
+    <h2>Checkbox Component</h2>
+    <CheckboxComponent></CheckboxComponent>
   </div>
 </template>
 
@@ -24,13 +28,15 @@ import { mapState, mapGetters, mapMutations, mapActions } from "vuex";
 import ButtonComponent from "./components/Button-Component";
 import InputComponent from "./components/Input-Component";
 import AutocompleteComponent from "./components/Autocomplete-Component";
+import CheckboxComponent from "./components/Checkbox-Component";
 
 export default {
   name: "app",
   components: {
     ButtonComponent,
     InputComponent,
-    AutocompleteComponent
+    AutocompleteComponent,
+    CheckboxComponent
   },
   computed: {
     ...mapState(["count"]),

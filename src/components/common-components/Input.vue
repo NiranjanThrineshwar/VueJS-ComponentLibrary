@@ -82,7 +82,7 @@ export default {
 }
 
 .input--box.input--error {
-  border: 1px solid $color--error--light;
+  border: 1px solid $color--error-light;
 
   &:hover {
     border: 1px solid $color--error;
@@ -90,7 +90,7 @@ export default {
 }
 
 .input--box.input--valid {
-  border: 1px solid $color--black--light;
+  border: 1px solid $color--black-light;
 
   &:hover {
     border: 1px solid $color--black;
@@ -129,7 +129,7 @@ export default {
 }
 
 .input--vanity.input--error {
-  border-bottom: 1px solid $color--error--light;
+  border-bottom: 1px solid $color--error-light;
 
   &:hover {
     border-bottom: 3px solid $color--error;
@@ -137,7 +137,7 @@ export default {
 }
 
 .input--vanity.input--valid {
-  border-bottom: 1px solid $color--black--light;
+  border-bottom: 1px solid $color--black-light;
 
   &:hover {
     border-bottom: 3px solid $color--black;
