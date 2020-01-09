@@ -1,7 +1,6 @@
 <template>
   <div class="radio-component">
     <Radio :radioData="radioData1" @onRadioSelect="onRadioSelect"></Radio>
-    <Radio :radioData="radioData2" @onRadioSelect="onRadioSelect"></Radio>
   </div>
 </template>
 
@@ -16,16 +15,6 @@ export default {
   data() {
     return {
       radioData1: [
-        {
-          primaryLabel: "I agree to the terms",
-          secondaryLabel:
-            "You might like to read our full <a href='#'>  terms & conditions.</a>",
-          isChecked: false,
-          isdisbaled: false,
-          additionalClasses: ""
-        }
-      ],
-      radioData2: [
         {
           primaryLabel: "Apples",
           secondaryLabel: "",

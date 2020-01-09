@@ -103,7 +103,7 @@ export default {
   /* When the radio is checked, add a blue background */
   input {
     &:checked ~ .form-radio__checkmark {
-      background-color: $color--secondary-border;
+      border: 2px solid $color--secondary-border;
 
       &:hover {
         border: 1px solid $color--grey-light;
@@ -139,10 +139,10 @@ export default {
   &::after {
     top: 6px;
     left: 6px;
-    width: 8px;
-    height: 8px;
+    width: 9px;
+    height: 9px;
     border-radius: 50%;
-    background: $color--white;
+    background: $color--secondary-border;
   }
 }
 </style>
