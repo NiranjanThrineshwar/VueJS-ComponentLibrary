@@ -91,6 +91,7 @@ export default {
   border: 1px solid $color--grey-light;
   background-color: $color--white;
   border-radius: 50%;
+  transition: all 0.5s ease-in-out;
 }
 
 /* On mouse-over, add a grey background color */
@@ -106,7 +107,7 @@ export default {
       border: 2px solid $color--secondary-border;
 
       &:hover {
-        border: 1px solid $color--grey-light;
+        border: 2px solid $color--secondary-border;
       }
     }
 

@@ -83,6 +83,7 @@ export default {
   border-radius: 2px;
   border: 3px solid $color--primary;
   cursor: pointer;
+  min-height: 50px;
 
   .button--primary-text,
   .button--secondary-text,
@@ -128,7 +129,7 @@ export default {
 
 .button.button-clicked {
   div {
-    width: 98%;
+    width: 97%;
     height: 43px;
   }
 }

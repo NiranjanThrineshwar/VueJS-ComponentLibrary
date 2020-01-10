@@ -2,50 +2,19 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
 
-    <!-- Button Component -->
-    <h2>Button Component</h2>
-    <ButtonComponent></ButtonComponent>
-    <br />
-
-    <!-- Input component -->
-    <h2>Input text Component</h2>
-    <InputComponent></InputComponent>
-    <br />
-
-    <!-- Auto-Complete component -->
-    <h2>Auto-complete Component</h2>
-    <AutocompleteComponent></AutocompleteComponent>
-    <br />
-
-    <!-- Checkbox component -->
-    <h2>Checkbox Component</h2>
-    <CheckboxComponent></CheckboxComponent>
-    <br />
-
-    <!-- Radio component -->
-    <h2>Radio Component</h2>
-    <RadioComponent></RadioComponent>
-    <br />
+    <div id="nav">
+      <router-link to="/">Components</router-link> |
+      <router-link to="/about">About</router-link>
+    </div>
+    <router-view />
   </div>
 </template>
 
 <script>
 import { mapState, mapGetters, mapMutations, mapActions } from "vuex";
-import ButtonComponent from "./components/Button-Component";
-import InputComponent from "./components/Input-Component";
-import AutocompleteComponent from "./components/Autocomplete-Component";
-import CheckboxComponent from "./components/Checkbox-Component";
-import RadioComponent from "./components/Radio-Component";
 
 export default {
   name: "app",
-  components: {
-    ButtonComponent,
-    InputComponent,
-    AutocompleteComponent,
-    CheckboxComponent,
-    RadioComponent
-  },
   computed: {
     ...mapState(["count"]),
     ...mapGetters(["doneTodos", "doneTodosCount", "getTodoById"]),
@@ -76,7 +45,16 @@ export default {
   margin-top: 60px;
 }
 
-h2 {
-  margin: 15px 0px 0px 0px;
+#nav {
+  padding: 30px;
+
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
 }
 </style>
