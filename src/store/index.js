@@ -3,7 +3,7 @@ import Vuex from "vuex";
 
 Vue.use(Vuex);
 
-export default new Vuex.Store({
+const store = new Vuex.Store({
   state: {
     count: 0,
     todos: [
@@ -60,14 +60,16 @@ export default new Vuex.Store({
   }
 });
 
-// this.store.commit("increment");
-// // eslint-disable-next-line no-console
-// console.log(this.store.state.count);
-// // eslint-disable-next-line no-console
-// console.log(this.store.getters.doneTodosCount);
-// // eslint-disable-next-line no-console
-// console.log(this.store.getters.getTodoById(2));
-// // eslint-disable-next-line no-console
-// console.log(this.store.commit("increment"));
-// // eslint-disable-next-line no-console
-// console.log(this.store.commit("incrementBy", { amount: 20 }));
+store.commit("increment");
+// eslint-disable-next-line no-console
+console.log(store.state.count);
+// eslint-disable-next-line no-console
+console.log(store.getters.doneTodosCount);
+// eslint-disable-next-line no-console
+console.log(store.getters.getTodoById(2));
+// eslint-disable-next-line no-console
+console.log(store.commit("increment"));
+// eslint-disable-next-line no-console
+console.log(store.commit("incrementBy", { amount: 20 }));
+
+export default store;
