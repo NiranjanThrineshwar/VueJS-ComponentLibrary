@@ -1,18 +1,2 @@
 @import "_colors.scss";
 @import "_typography.scss";
-
-$iconfontpath-override: "~@maersk/design-system/dist/fonts/";
-// @import "~@maersk/design-system/dist/scss/maeu.scss";
-
-@font-face {
-  font-family: "Maersk Text";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(https://assets.maerskline.com/sharedfonts/maeu/text/MaerskText-Regular.eot)
-      format("eot"),
-    url(https://assets.maerskline.com/sharedfonts/maeu/text/MaerskText-Regular.woff2)
-      format("woff2"),
-    url(https://assets.maerskline.com/sharedfonts/maeu/text/MaerskText-Regular.woff)
-      format("woff");
-}

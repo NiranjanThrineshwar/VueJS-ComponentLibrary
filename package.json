@@ -16,7 +16,6 @@
     "vuex": "^3.1.2"
   },
   "devDependencies": {
-    "@maersk/design-system": "^1.0.4-2",
     "@vue/cli-plugin-babel": "^4.1.0",
     "@vue/cli-plugin-eslint": "^4.1.0",
     "@vue/cli-plugin-unit-jest": "^4.1.2",
